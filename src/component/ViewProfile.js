@@ -55,6 +55,8 @@ const ViewProfile = () => {
   const[sellNFT,setSellNFT]=useState(false)
   
   const sellNFTToken=(data)=>{
+    handleSellHide()
+    handleWaitShow()
     setSellNFT(data)
 
   }
@@ -126,11 +128,10 @@ const[items,setItems]=useState([])
 //--------------------------------------------- Ready To Sell Token -------------------------------------------------//
 
 const readyToSellToken=async()=>{
-    try{
+    try{  
         
-        handleWaitShow()
         const _token_id=13
-        const val=ethers.utils.parseUnits('1.0',18)
+        const val=ethers.utils.parseUnits(sellNFT,18)
         const tx=await nftTradeConTractWrite.readyToSellToken(_token_id,val)
         await tx.wait()
         setTx(tx)
