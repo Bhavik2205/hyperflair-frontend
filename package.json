@@ -1,0 +1,86 @@
+{
+  "name": "hyperflair-nft",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://tomocoins.xyz/nft",
+  "dependencies": {
+    "@binance-chain/bsc-connector": "^1.0.0",
+    "@coinbase/wallet-sdk": "^3.5.2",
+    "@fortawesome/fontawesome-free": "^6.1.1",
+    "@popperjs/core": "^2.11.4",
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "@walletconnect/web3-provider": "^1.8.0",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "@web3-react/walletconnect-connector": "^6.2.13",
+    "@web3-react/walletlink-connector": "^6.2.14",
+    "apisauce": "^2.1.6",
+    "axios": "^0.27.2",
+    "bootstrap": "^4.6.1",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "ethers": "^5.6.7",
+    "https-browserify": "^1.0.0",
+    "ipfs-http-client": "^56.0.3",
+    "jquery": "^3.6.1",
+    "magnific-popup": "^1.1.0",
+    "os-browserify": "^0.3.0",
+    "popper.js": "^1.16.1",
+    "react": "^18.0.0",
+    "react-bootstrap": "^2.4.0",
+    "react-countdown": "^2.3.2",
+    "react-data-table-component": "^7.5.0",
+    "react-data-table-component-extensions": "^1.6.0",
+    "react-dom": "^18.0.0",
+    "react-dropzone-uploader": "^2.11.0",
+    "react-images-uploading": "^3.1.6",
+    "react-magnific-popup": "^1.0.1",
+    "react-modal": "^3.15.1",
+    "react-owl-carousel": "^2.3.3",
+    "react-player": "^2.10.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.0",
+    "react-select": "^5.2.2",
+    "react-select-2": "^2.0.11",
+    "react-web3-modal": "^0.1.5",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "styled-components": "^5.3.5",
+    "toastr": "^2.1.4",
+    "web-vitals": "^2.1.4",
+    "web3": "^1.7.5",
+    "web3.storage": "^4.4.0",
+    "web3modal": "^1.9.9",
+    "webpack": "^5.74.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "process": "^0.11.10",
+    "react-app-rewired": "^2.2.1"
+  }
+}
