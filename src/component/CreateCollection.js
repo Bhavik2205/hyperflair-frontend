@@ -15,6 +15,7 @@ const client = new Web3Storage({ token: `${process.env.REACT_APP_TOKEN_ID}` })
 //const client=create({ host: "ipfs.infura.io", port: 5001, protocol: "https" });
 
 const CreateItem = () => {
+
   const[nftContractRead,setNftContractRead]=useState(null)
   const[nftContractWrite,setNftContractWrite]=useState(null)
   const[file,setFile]=useState([])
@@ -79,6 +80,7 @@ const handleServiceAdd = () => {
       const data=new FormData()
       data.append("name",name)
       data.append("external_link",link)
+      data.append("external_link",link)
       data.append("description",des)
       data.append("unlockable_content",unlockableContent)
       data.append("explicit",explicit)
@@ -105,7 +107,7 @@ const handleServiceAdd = () => {
           // // setCover(itemsObj.cover)
           };
         fetchUser(
-          { url: `${process.env.REACT_APP_IMG_SERVER}/api/nft/create`,method:'POST',headers: { 'Content-Type': 'multipart/form-data' }, body: {data} },
+          { url: `http://465f-122-169-39-86.ngrok.io/api/nft/create`,method:'POST',headers: { 'Content-Type': 'multipart/form-data' }, body: {data} },
           transformItems
           );
       }catch(error){
@@ -130,10 +132,16 @@ const approval=await nftContractWrite.setApprovalForAll(
 await approval.wait()
 console.log("Transaction Hash:",approval.hash)
 }
+//------------------------------------------Ready To Sell Token------------------------------------------------//
 
+const readyToSellToken=async()=>{
+  const _token_id=13
+  const val=ethers.utils.parseUnits('1.0',18)
+  const tx=await nftTradeConTractWrite.readyToSellToken(_token_id,val)
+  console.log(tx)
+}
 
-
-//----------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------//
 //function calls
 useEffect(()=>{
   contractIntialization()
@@ -159,6 +167,7 @@ useEffect(()=>{
     if(typeof file !== 'undefined'){
       try{
         //const result=await client.add(file)
+        
         //setFile(`https://ipfs.infura.io/ipfs/${result.path}`)
         //console.log(result)
       }catch(err){
@@ -449,7 +458,7 @@ Adding a category will help make your item discoverable on Hyper-Flair NFT.
               </div>
               <div className="row w-100">
                 <div className="col-sm-12 col-md-4 col-lg-3">
-                  <button type="button" className="sign__btn" onClick={createNFT}>
+                  <button type="button" className="sign__btn" onClick={readyToSellToken}>
                     Create item
                   </button>
                 </div>
