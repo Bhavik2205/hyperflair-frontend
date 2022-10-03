@@ -27,7 +27,7 @@ const Wallet = () => {
   const handleConnect = () => {
     try {
       let type = window.localStorage.getItem("provider");
-      if (age == true && terms == true) {
+      if (age === true && terms === true) {
         if (type !== undefined && type !== "") {
           activate(connectors[type]);
         } else {
